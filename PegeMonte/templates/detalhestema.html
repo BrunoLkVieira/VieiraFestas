@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vieira's Festas</title>
+    <link href="static/css/detalhes.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Dancing+Script:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <section class="main">
+
+      <div style="background-image: url('{{ object.thumb.url }}');"></div>
+      <h1>{{ object.titulo }}</h1>
+
+    </section>
+
+    {% for festa in object.festas.all %}
+    <section class="festas" style="background-image: url('static/images/textura-de-papel-branco_1194-2301.png');">
+        <div class="festa-div">
+            <h2>{{ festa.nome }}</h2>
+            <h5>DESCRIÇÃO:</h5>
+            <p>{{ festa.descricao }}</p>
+            <p><b>PREÇO:</b> R$ {{ festa.preco }}</p>
+            <div class="imagens">
+              <img src="{{ festa.foto1.url }}">
+              <img src="{{ festa.foto2.url }}">
+              <img src="{{ festa.foto3.url }}">
+              <img src="{{ festa.foto4.url }}">
+              <img src="{{ festa.foto5.url }}">
+              <img src="{{ festa.foto6.url }}">
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+</body>
+</html>

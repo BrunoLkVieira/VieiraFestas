@@ -1,0 +1,163 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vieira's Festas</title>
+    <link href="static/css/homepage.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Dancing+Script:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fixo-redes-sociais">
+        <a href="https://www.instagram.com/vieira_fest/" target="_blank"><img src="static/images/icons8-instagram-100.png" alt=""></a>
+        <img src="static/images/icons8-facebook-novo-100.png" alt="">
+        <img src="static/images/icons8-whatsapp-100.png" alt="">
+    </div>
+
+    <section class="main" style=" background-image: url('static/images/bg-brinquedos.png'); ">
+
+        <div class="nav">
+            <div class="logo">
+                <img src="static/images/zarla-viva-la-festa-1x1-2400x2400-20210608-hffk7bj6pbfxk9c6fr4r.png" alt="">
+            </div>
+
+            <form method="get" action="{% url 'pesquisa' %}" class="barra-nav" >
+                <input type="text" name="query" placeholder="Pesquise..">
+            </form>
+            <div class="itens">
+
+                <a href="#sobre" >Sobre</a>
+                <a href="#temas" >Temas</a>
+                <a href="#contato" class="btn-contato">Contato</a>
+            </div>
+        </div>
+
+
+        <div class="head">
+            <h1>Vieira Festas</h1>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="sobre" id="sobre">
+
+        <div>
+            <h2>Sobre a Vieira's festas</h2>
+            <p>A Vieira's Festas é uma empresa, criada pela Valéria Dutra, voltada para decorações de festa utilizando Peg & Monte. </p>
+            <p>Tudo da Vieira's festas é feito para facilitar o transporte dos materiais. </p>
+            <h4>Preços</h4>
+            <p><b>3 Cilindros + 1 Arco Médio:</b> R$150,00</p>
+            <p><b>3 Cilindros + 1 Arco Médio + 1 Arco pequeno :</b>R$170,00</p>
+            <p><b>3 Cilindros + 1 Arco Grande:</b>R$200,00</p>
+            <p><br><b>-ADICIONAIS:</b></p>
+            <p><br><b>Escada:</b> +R$40,00</p>
+            <p><b>Arco de balões:</b> +R$60,00 </p>
+            <p><b>Decorações:</b> +R$50,00</p>
+
+        </div>
+
+
+
+    </section>
+
+
+
+    <section class="temas" id="temas" style=" background-image: url('static/images/bg-brinquedos.png'); ">
+
+            {%for lista in lista_temas_girl%}
+                {{lista}}
+            {% endfor %}
+        <div class="girls">
+
+            <h2>Girls</h2>
+
+            {%for tema in lista_temas_girl%}
+                    {% if forloop.counter < 6 %}
+                        <a href="{{tema.pk }}">
+                            <div class="box-temas">
+                                <img src="{{ tema.thumb.url}}" alt="">
+                                <div>
+                                    <h4>{{tema.titulo}}</h4>
+                                    <p>{{tema.descricao}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+            {% endfor %}
+
+        </div>
+
+        <div class="boys">
+            <h2>Boys</h2>
+            {%for tema in lista_temas_boy%}
+                    {% if forloop.counter < 6 %}
+                        <a href="{{tema.pk }}">
+                            <div class="box-temas">
+                                <img src="{{ tema.thumb.url}}" alt="">
+                                <div>
+                                    <h4>{{tema.titulo}}</h4>
+                                    <p>{{tema.descricao}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+            {% endfor %}
+
+        </div>
+        <div class="mais-temas">
+            <a href="" >+Temas</a>
+        </div>
+    </section>
+
+
+
+    <section class="contato" id="contato">
+        <h2>Contato</h2>
+        <div class="center">
+            <form method="post">
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Tel">
+                <input type="text" placeholder="Tema">
+                <label > Data do aniversario:</label>
+                <input type="date">
+                <textarea placeholder="Adicionais/comentarios"></textarea>
+                <input type="submit" placeholder="Enviar"/>
+            </form>
+        </div>
+
+    </section>
+
+    <footer style="background-image: url('static/images/textura-de-papel-branco_1194-2301.png')">
+
+        <div >
+            <img src="static/images/zarla-viva-la-festa-1x1-2400x2400-20210608-hffk7bj6pbfxk9c6fr4r.png" alt="">
+        </div>
+
+        <div>
+            <h5>Vieira Festas</h5>
+        </div>
+
+        <div >
+            <h6>Desenvolvedor: <br><u>Bruno De Alencar Vieira</u> </h6>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

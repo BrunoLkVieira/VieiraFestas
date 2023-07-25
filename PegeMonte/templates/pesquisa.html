@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vieira's Festas</title>
+    <link href="{% static 'css/pesquisa.css' %}" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Dancing+Script:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+    <div class="fixo-redes-sociais">
+        <a href="https://www.instagram.com/vieira_fest/" target="_blank"><img src="{% static 'images/icons8-instagram-100.png' %}" alt=""></a>
+        <img src="{% static 'images/icons8-facebook-novo-100.png' %}" alt="">
+        <img src="{% static 'images/icons8-whatsapp-100.png' %}" alt="">
+    </div>
+
+    <section class="main" style="background-image: url('{% static 'images/bg-brinquedos.png' %}') ;">
+        <div class="bg-main"></div>
+        <div class="nav">
+            <div class="logo">
+                <img src="{% static 'images/zarla-viva-la-festa-1x1-2400x2400-20210608-hffk7bj6pbfxk9c6fr4r.png' %}" alt="">
+            </div>
+           <form method="get" action="{% url 'pesquisa' %}" class="barra-nav" >
+                <input type="text" name="query" placeholder="Pesquise..">
+           </form>
+
+        </div>
+
+
+        <div class="resultados">
+            <h1>Resultados:</h1>
+            <div class="temas">
+                {% for tema in object_list %}
+                    <a href="{% url 'detalhestema' tema.pk %}">
+                        <div class="tema-box">
+                            <img src="{{ tema.thumb.url }}" alt="">
+                            <h2>{{ tema.titulo }}</h2>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+</body>
