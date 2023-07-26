@@ -32,6 +32,8 @@ if TOKEN_CSRF:
     DEBUG = False
 else:
     DEBUG = True
+
+
 ALLOWED_HOSTS = ["*"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
