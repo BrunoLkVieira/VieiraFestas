@@ -28,10 +28,8 @@ else:
     SECRET_KEY = 'django-insecure-edp^3=3!7884c@044#xjo*3o&b_tfq*)-$2yz3)!r3bfz7b-07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if TOKEN_CSRF:
-    DEBUG = False
-else:
-    DEBUG = True
+
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -88,7 +86,7 @@ WSGI_APPLICATION = 'ProjetoPegeMonte.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 import dj_database_url
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = "postgresql://bd_vieirafestas_user:OyaEtIW85ekyiQ9EvpXFQIJ0r1Eg7tqW@dpg-cj04fptph6ek4q4br7q0-a.oregon-postgres.render.com/bd_vieirafestas"
 if DATABASE_URL:
     DATABASES={
         'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
