@@ -19,10 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
 
+static_urlpatterns = [
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT}),
+    re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("PegeMonte.urls")),
-    re_path(r'^static/(?P<path>.*)$', serve, {'document_root':settings.STATIC_ROOT}),
+    path("static/", include(static_urlpatterns)),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
