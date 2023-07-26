@@ -28,11 +28,13 @@ else:
     SECRET_KEY = 'django-insecure-edp^3=3!7884c@044#xjo*3o&b_tfq*)-$2yz3)!r3bfz7b-07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+if TOKEN_CSRF:
+    DEBUG=False
+else:
+    DEBUG = True
 
-DEBUG = True
 
-
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["https://vieirafestas.onrender.com/","http://127.0.0.1:8000", "127.0.0.1:8000",  '127.0.0.1']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
