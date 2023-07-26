@@ -28,9 +28,10 @@ else:
     SECRET_KEY = 'django-insecure-edp^3=3!7884c@044#xjo*3o&b_tfq*)-$2yz3)!r3bfz7b-07'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-DEBUG = True
-
+if TOKEN_CSRF:
+    DEBUG = False
+else:
+    DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -93,16 +94,13 @@ if DATABASE_URL:
     }
 
 else:
-    DATABASE_URL = "postgresql://bd_vieirafestas_user:OyaEtIW85ekyiQ9EvpXFQIJ0r1Eg7tqW@dpg-cj04fptph6ek4q4br7q0-a.oregon-postgres.render.com/bd_vieirafestas"
+
     DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-    #DATABASES = {
-    #    'default': {
-    #        'ENGINE': 'django.db.backends.sqlite3',
-    #        'NAME': BASE_DIR / 'db.sqlite3',
-    #    }
-    #}
 
 
 # Password validation
