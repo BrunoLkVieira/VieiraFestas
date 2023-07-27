@@ -165,4 +165,4 @@ cython_debug/
 planejamento.txt
 db.sqlite3
 static/css/*.css
-.static/*
+static/*
