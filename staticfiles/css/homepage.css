@@ -12,9 +12,9 @@
 
 .nav{
     display:flex;
-    max-height: 8vh ;
-    position: relative;
-    z-index: 3;
+    height: 15vh ;
+
+
 }
 .nav > .logo{
     justify-content: center;
@@ -23,7 +23,7 @@
     padding-top: 10px;
 }
 .nav > .logo img{width: 90px;height: 90px; }
-.barra-nav{width: 33%; display: flex; padding-top: 35px;}
+.barra-nav{width: 33%; display: flex; justify-items: center;}
 .barra-nav input{
     width: 80%;
     height:30px;
@@ -37,9 +37,10 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
+    margin-left: 10px;
     padding-left: 30px;
     padding-right: 80px;
-    padding-top: 35px;
+
 }
 .nav > .itens > a{
     justify-content: space-around;
@@ -58,20 +59,19 @@
 
 
 
-
 .head{
     width: 100%;
-    height: 91%;
+    height: 83%;
     display:flex;
     justify-content: center;
-    position: relative;
-    z-index: 3;
+    padding:70px;
 }
 .head > h1{
     margin: auto auto;
-    font-size: 180px;
+    font-size: 140px;
     font-family: 'Sacramento', cursive;
     text-align: center;
+    justify-items: center;
 }
 
 
@@ -100,14 +100,13 @@
     background-color: rgb(255, 255, 255) ;
     border-top: 1px solid;
     border-bottom: 2px solid;
-    position: relative;
-    z-index: 1;
+
     display: flex;
     flex-wrap: wrap;
 }
 .sobre > div{
-    margin: 10px 120px 160px;
-    padding: 5px;
+    margin: 10px 20px 160px;
+    padding: 0 100px;
     display: block;
     margin: 0 auto 230px;
 }
@@ -117,13 +116,8 @@
     margin: 70px 0;
     text-align: center;
 }
-.sobre > div > p{font-family: cursive; font-size: 25px;}
-.sobre > div > h4{
-    font-family: cursive;
-    font-size: 45px;
-    margin: 100px 0 50px ;
-    text-align: center;
-}
+.sobre > div > p{font-family: cursive; font-size: 25px;text-align:start;}
+
 
 
 
@@ -131,7 +125,7 @@
 .temas{
     width: 100%;
     border-bottom: 1px solid;
-    margin-top: -80px;
+
     padding-top: 50px;
 }
 
@@ -148,7 +142,7 @@
     width: 320px;
     height:320px;
     position: center;
-    image-size: cover;
+    background-size: cover;
 }
 .box-temas div{padding: 20px; background-color: white;}
 .box-temas > div > h4{font-size: 45px; margin-bottom: 20px;}
@@ -298,13 +292,112 @@
 footer{
     width: 100%;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-around;
     background-position:center ;
     background-size: cover;
-    padding: 0 100px;
+
     border-top: 3px solid;
 }
+.titulo{margin-left: 100px;}
 footer img{width: 80px;height: 80px; margin: auto 0; }
 footer > div{ display: flex; justify-items: center;}
 footer h5{margin: auto 0; font-family: 'Sacramento', cursive ; font-size: 40px;}
 footer h6{margin: auto 0; padding: auto 0; font-size: 17px; }
+
+
+
+
+@media screen and (max-width: 1332px){
+    .box-temas p {display: none;}
+    .box-temas{display: block;width: 504px; margin: 50px auto;}
+    .box-temas img{width: 100%;border-bottom: 2px solid;}
+    .box-temas div { display:flex;justify-content: center; text-align: center; width: 100%; border-top: 2px solid;}
+    .box-temas h4 {display:flex;align-items: center; margin-bottom:  auto; padding: auto; }
+
+
+    .center{padding: 0 20%;}
+
+}
+
+@media screen and (max-width: 1000px ){
+    .nav .itens{display: none;}
+    .nav > .logo{ justify-content: center; width: 40%; display: flex; padding-top: 10px;}
+    .nav > .logo img{width: 90px;height: 90px; }
+
+    .barra-nav{width: 60%; display: flex; padding-top: 35px;}
+    .barra-nav input{width: 80%; height:30px ; margin: auto ; padding: 5px; border: 2px solid;border-radius: 5px; }
+
+    .head {padding:0;}
+}
+
+
+@media screen and (max-width: 799px ){
+
+    .head h1{font-size: 90px;}
+    .girls,
+    .boys{
+        width: 80%;
+        }
+    .fixo-redes-sociais{display:none;}
+    .box-temas {width:404px ;}
+    .box-temas img{width:400px ; height: 350px;}
+    .box-temas div{width:400px ;}
+    .box-temas div h4{font-size: 25px;}
+
+
+    .sobre >div> h2,
+    .sobre >div> h4{font-size: 45px;}
+
+    footer > .logo,
+    footer > .desenvolvedor{
+        display:none;
+    }
+    footer{padding: 0 0 ;}
+    footer>.titulo{width:100% ;display:flex; justify-content: center;margin: 0;}
+}
+
+@media screen and (max-width: 600px ){
+
+    .girls,
+    .boys{
+        width: 90%;
+        }
+
+
+    .sobre > div{padding: 0 30px;}
+
+
+}
+
+
+@media screen and (max-width: 500px ){
+
+    .head h1{font-size: 100px ;}
+
+    .sobre > div{padding: 0 15px;}
+
+    .box-temas {width:284px ;}
+    .box-temas img{width:280px ; height: 250px;}
+    .box-temas div{width:280px ;}
+    .box-temas div h4{font-size: 25px;}
+    .box-temas div h4{margin-bottom: 0;}
+
+    .girls,
+    .boys{
+        width: 95%;
+        }
+
+    .center{
+        padding: 10%;
+    }
+
+
+}
+
+@media screen and (max-width: 370px ){
+    .girls,
+    .boys{
+        width: 99%;
+        border: none;
+        }
+}
