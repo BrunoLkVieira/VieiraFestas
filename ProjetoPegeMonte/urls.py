@@ -21,15 +21,18 @@ from django.views.static import serve
 
 static_urlpatterns = [
     re_path(r"^static/(?P<path>.*)$", serve, {"document_root": settings.STATIC_ROOT}),
+    re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT})
 ]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("PegeMonte.urls")),
     path("static/", include(static_urlpatterns)),
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+if settings.DEBUG:
+    # static files (images, css, javascript, etc.)
+    urlpatterns += patterns('', (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}))
 

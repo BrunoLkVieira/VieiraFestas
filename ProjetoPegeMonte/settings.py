@@ -29,9 +29,9 @@ else:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if TOKEN_CSRF:
-    DEBUG=False
-else:
     DEBUG = False
+else:
+    DEBUG = True
 
 
 ALLOWED_HOSTS = ["https://vieirafestas.onrender.com/","http://127.0.0.1:8000", "127.0.0.1:8000",  '127.0.0.1']
