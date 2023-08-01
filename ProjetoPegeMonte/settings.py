@@ -31,7 +31,7 @@ else:
 if TOKEN_CSRF:
     DEBUG=False
 else:
-    DEBUG = True
+    DEBUG = False
 
 
 ALLOWED_HOSTS = ["https://vieirafestas.onrender.com/","http://127.0.0.1:8000", "127.0.0.1:8000",  '127.0.0.1']
