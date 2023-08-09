@@ -81,6 +81,7 @@
 
                         <a href="{{tema.pk }}">
                             <div class="box-temas">
+                                /* img src="{{ tema.thumb.url}}" alt=""*/
                                 <img src="static/images/{{tema.titulo}}.jpg" alt="">
                                 <div>
                                     <h4>{{tema.titulo}}</h4>
@@ -99,7 +100,8 @@
                     {% if forloop.counter < 6 %}
                         <a href="{{tema.pk }}">
                             <div class="box-temas">
-                                <img src="{{ tema.thumb.url}}" alt="">
+                                /* img src="{{ tema.thumb.url}}" alt=""*/
+                                <img src="static/images/{{tema.titulo}}.jpg" alt="">
                                 <div>
                                     <h4>{{tema.titulo}}</h4>
                                     <p>{{tema.descricao}}</p>
