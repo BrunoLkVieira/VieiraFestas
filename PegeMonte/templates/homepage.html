@@ -78,6 +78,7 @@
 
             {%for tema in lista_temas_girl%}
                     {% if forloop.counter < 6 %}
+
                         <a href="{{tema.pk }}">
                             <div class="box-temas">
                                 <img src="{% static 'image/{{tema.titulo}}.jpg' %}" alt="">
